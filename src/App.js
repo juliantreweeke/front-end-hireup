@@ -7,6 +7,8 @@ import Dropdown from './components/Dropdown';
 const url = 'http://localhost:1111/characters';
 
 
+
+
 class App extends Component {
   
   constructor(props) {
@@ -21,13 +23,14 @@ class App extends Component {
   
   
   search(){
-  
+    this.setState({loading: true});
     let search = this.state.search;
     const url_search = `http://localhost:1111/characters?nameStartsWith=${search}`;
     fetch(url_search)
     .then(results => {
       return results.json();
     }).then(data => {
+      this.setState({loading: false});
       let results = data.results;
       console.log(results);
       // console.log(data.results);
@@ -75,12 +78,14 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
   
-          <input onChange={(e)=>{ this.auto_suggest(e) } } id="search-bar" type="text" placeholder="Search.."></input>
+          <input className={ this.state.loading ? 'loading' : ''} onChange={(e)=>{ this.auto_suggest(e) } } id="search-bar" type="text" placeholder="Search.."></input>
+        
         </header>
-  
+          
           
           { results !== undefined ? <Dropdown results={this.state.results}/> : null  }  
                 
+          
           
           
       </div>

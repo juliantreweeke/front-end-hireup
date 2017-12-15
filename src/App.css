@@ -23,11 +23,6 @@
   font-size: large;
 }
 
-/* @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-} */
-
 #search-bar {
   float:right;
   margin-top:7px; 
@@ -47,5 +42,24 @@
 /* Firefox 19+ */
 #search-bar::-moz-placeholder { 
   color: rgba(142, 149, 168, 0.9);
-  margin-left:10px; 
+  padding-left:20px; 
+}
+
+.loading {
+    background: url(http://www.xiconeditor.com/image/icons/loading.gif) no-repeat right center;
+    background-color: white;
+}
+
+
+
+
+
+.spinner {
+  float:right;
+  margin-top:7px; 
+  
+  /* margin-right:17%;  */
+  width:30px;
+  height:30px;
+  
 }

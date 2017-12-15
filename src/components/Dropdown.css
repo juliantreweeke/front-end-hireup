@@ -1,10 +1,41 @@
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
 .Dropdown-wrapper {
-  /* overflow: hidden; */
-  height:200px;
+  /* height:475px; */
+
+  max-height: 475px;
+  -webkit-overflow-scrolling: touch;
+  
+  
+  /* overflow-x: visible;
+  overflow-y: scroll; */
+  
+  /* overflow-y:scroll; */
+  /* overflow:scroll; */
+
+  /* overflow-x:hidden;  */
+  
+  
 }
 
 .Dropdown {
+  overflow: scroll;
+  /* position: absolute; */
+    
+  
+    /* overflow: auto; */
+    /* -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none; */
+  
+  
+  
+  
+  
+
   background-color:#F9F9F9;
   width:440px;
   height:100px; 
@@ -26,6 +57,7 @@
 .character-description {
   font-size:10px;
   color:rgba(80, 90, 118, 0.7);
+
 }
 
 .character-image {
