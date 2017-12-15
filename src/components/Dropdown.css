@@ -1,0 +1,16 @@
+
+.Dropdown {
+  background-color:#F9F9F9;
+  width:440px;
+  height:100px; 
+  float:right;
+  margin-right:18%; 
+  z-index: 2;
+  margin-top:-20px;   
+  border-radius:3px;
+  border: 1px solid rgba(142, 149, 168, 0.4);
+}
+
+.character-name {
+  padding:20px;
+}

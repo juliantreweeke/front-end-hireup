@@ -1,26 +1,17 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
+import Dropdown from './components/Dropdown';
 
 
 const url = 'http://localhost:1111/characters';
-let search = 'iron';
-const url_search = `http://localhost:1111/characters?nameStartsWith=${search}`;
-
-
-
-
-
-
-    
-
 
 
 class App extends Component {
   
   constructor(props) {
     super(props);
-    this.state = {search: 'iron', success:'false'
+    this.state = {search:' ', success:'false',results:undefined,loading:false 
     };
     
     this.auto_suggest = this.auto_suggest.bind(this);
@@ -29,29 +20,38 @@ class App extends Component {
   
   
   
-  search(query){
-    
-    fetch(query)
+  search(){
+  
+    let search = this.state.search;
+    const url_search = `http://localhost:1111/characters?nameStartsWith=${search}`;
+    fetch(url_search)
     .then(results => {
       return results.json();
     }).then(data => {
-        console.log(data.results.length);
+      let results = data.results;
+      console.log(results);
+      // console.log(data.results);
+      this.setState({results: results});
+      console.log(this.state.results);
+      
+        // this.setState({ results: data.results});
         
-        data.results.length > 0 ? data.results.map((character,i) => {
-          
-          console.log(character.name);
-        }) : console.log("whoops can't find the name!");    
-        
+      
+        // 
+    // data.results.length > 0 ? data.results.map((results,i) => { 
+    // 
+    //   }) : console.log("whoops can't find the name!");    
+    
     })
+      
       
     
   }
   
  auto_suggest(e){
    this.setState({search: e.target.value});
-   this.search(this.state.search);
-   
-   this.state.search === "iron" ? ()=>{ this.setState({success:true}) }:null;
+   this.search();
+  
  }
   
   
@@ -67,27 +67,22 @@ class App extends Component {
   
   
   render() {
+    
+    let results = this.state.results;
+    
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-          <input onChange={(e)=>{ this.auto_suggest(e) } } id="searchbar" type="text" placeholder="your search"></input>
+  
+          <input onChange={(e)=>{ this.auto_suggest(e) } } id="search-bar" type="text" placeholder="Search.."></input>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <h1>{this.state.search}</h1>
-        {this.state.success}
-        
-        {this.state.success
-          ? <div>found</div>
-          : <div>not found</div>}
-        
-        
-        
-        
-        
+  
+          
+          { results !== undefined ? <Dropdown results={this.state.results}/> : null  }  
+                
+          
+          
       </div>
     );
   }
