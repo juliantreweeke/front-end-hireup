@@ -14,12 +14,18 @@
   margin-top:-20px;   
   border-radius:3px;
   border: 1px solid rgba(142, 149, 168, 0.4);
+  color:#505A76;
   /* overflow-y: scroll; */
 }
 
-.character-name {
+.character-text {
   padding:30px 30px 30px 100px;
   text-align: left;  
+}
+
+.character-description {
+  font-size:10px;
+  color:rgba(80, 90, 118, 0.7);
 }
 
 .character-image {
@@ -28,4 +34,10 @@
   border-radius: 50%;
   width:50px;
   height:50px; 
+}
+
+.Dropdown:hover {
+  background-color:#DCCECE;
+  color:red;
+  cursor:pointer;
 }
