@@ -11,7 +11,8 @@ class Dropdown extends Component {
   }
   
   componentDidMount() {
-    alert(this.props.results);
+    console.log(this.props.results);
+    
   }
   
   
@@ -23,13 +24,16 @@ class Dropdown extends Component {
     return (
       <div>
       
-      {results.map((character) => {
+      <div className="Dropdown-wrapper">
+      {results.map((character,i) => {
             if (results.length > 0){
-              return <div className="Dropdown">
+              return <div className="Dropdown" key={i}>
+                <img className="character-image" src={`${character.thumbnail.path}.jpg`}></img>
                 <div className="character-name">{character.name}</div>
               </div>
              }
             })}
+      </div>
       
           
       </div>
