@@ -35,7 +35,9 @@ class App extends Component {
       console.log(results);
       // console.log(data.results);
       this.setState({results: results});
-      console.log(this.state.results);
+      console.log('results', this.state.results);
+      
+      
       
         // this.setState({ results: data.results});
         
@@ -83,8 +85,10 @@ class App extends Component {
         </header>
           
           
-          { results !== undefined ? <Dropdown results={this.state.results}/> : null  }  
-                
+          { results !== undefined ? 
+            results.length === 0 ? <Dropdown search={this.state.search} results={"none"}/> : <Dropdown results={this.state.results}/>
+          : null  }  
+        
           
           
           

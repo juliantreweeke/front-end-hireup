@@ -30,13 +30,10 @@ class Dropdown extends Component {
       < div > <div className="Dropdown-wrapper">
 
   {results === "none"
-    ? <div className="noresults">
-        <h1>Oh no!</h1>
-         <div>
-          <h3>No results found for {this.props.search} </h3>
-         </div>
+    ? <div className="Dropdown">
+        <h1>Oops no matches!</h1>
       </div>
-    : 
+    : {
       results.map((character, i) => {
         if (results.length > 0) {
           if (character.description.length > 10) {
@@ -54,7 +51,7 @@ class Dropdown extends Component {
           </div>
         }
       })
-    
+    }
 }
 
 </div> < /div>

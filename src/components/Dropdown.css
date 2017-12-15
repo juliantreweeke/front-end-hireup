@@ -24,29 +24,19 @@ body::-webkit-scrollbar {
 
 .Dropdown {
   overflow: scroll;
-  /* position: absolute; */
-    
-  
-    /* overflow: auto; */
-    /* -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none; */
-  
-  
-  
-  
-  
-
-  background-color:#F9F9F9;
-  width:440px;
   height:100px; 
+}
+
+.Dropdown, .noresults {
+  background-color:#F9F9F9;
   float:right;
+  width:440px;
   margin-right:18%; 
   z-index: 2;
   margin-top:-20px;   
   border-radius:3px;
   border: 1px solid rgba(142, 149, 168, 0.4);
   color:#505A76;
-  /* overflow-y: scroll; */
 }
 
 .character-text {
@@ -73,3 +63,21 @@ body::-webkit-scrollbar {
   color:red;
   cursor:pointer;
 }
+
+.noresults {
+  height:180px;
+}
+
+.noresults h1 {
+  padding-top:3%; 
+  color:red;
+}
+
+.noresults h3 {
+
+}
+
+.noresults > div:nth-of-type(1) { 
+  padding:0 30%;
+}
+
