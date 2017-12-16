@@ -4,7 +4,7 @@
 
 .App-logo {
   float:left;
-  margin-left:15%; 
+  margin-left:15%;
   height: 45px;
 }
 
@@ -25,11 +25,11 @@
 
 #search-bar {
   float:right;
-  margin-top:7px; 
-  margin-right:17%; 
+  margin-top:7px;
+  margin-right:17%;
   width:240px;
   height:35px;
-  border-radius:5px; 
+  border-radius:5px;
   border:none;
 }
 
@@ -38,33 +38,34 @@
 }
 
 /* Chrome/Opera/Safari */
-#search-bar::-webkit-input-placeholder { 
+#search-bar::-webkit-input-placeholder {
   color: rgba(142, 149, 168, 0.9);
-  padding-left:20px; 
+  padding-left:20px;
 }
 
 /* Firefox 19+ */
-#search-bar::-moz-placeholder { 
+#search-bar::-moz-placeholder {
   color: rgba(142, 149, 168, 0.9);
-  padding-left:20px; 
+  padding-left:20px;
 }
 
 .loading {
-    background: url(http://www.xiconeditor.com/image/icons/loading.gif) no-repeat right center;
+    background: url('./img/spinner-small.svg') no-repeat right center;
+    /* background: url(http://www.xiconeditor.com/image/icons/loading.gif) no-repeat right center; */
     background-color: white;
 }
-
 /* mobile burger menu styles */
 
 .mobile-menu {
-  display:none; 
+  display:none;
   position: relative;
   top:-5px;
   right:5px;
+  cursor: pointer;
 }
 
 .mobile-menu span {
-    border-radius:3px; 
+    border-radius:3px;
     content: "";
     position: absolute;
     left: 30px;
@@ -97,45 +98,49 @@
 
 /* Smartphones (landscape) ----------- */
 @media only screen and (max-width : 768px) {
-  
+
   /* on mobile view - show burger menu option */
   .mobile-menu {
-    display:block; 
+    display:block;
   }
 
   .App-logo {
    position: absolute;
-   top: 6%;
+   top: 5%;
    width: 200px;
    height: 78px;
-   margin-top: -35px; 
-   margin-left: -100px; 
+   margin-top: -33px;
+   margin-left: -100px;
   }
-  
+
   #search-bar {
-    font-size:20px; 
+    font-size:20px;
     position: absolute;
     border: 1px solid rgba(142, 149, 168, 0.3);
-    margin-top: 100px; 
-    margin-left: -180px; 
+    margin-top: 100px;
+    margin-left: -180px;
     width:360px;
     height:60px;
     background-color:#F9F9F9;
   }
-  
 
-  
-  
-  
-  
-  #search-bar::-webkit-input-placeholder { 
-   font-size:20px; 
-   padding-left:30px; 
+  .loading  {
+    background: url('./img/spinner.svg') no-repeat right center;
+  }
+
+
+
+
+
+
+  #search-bar::-webkit-input-placeholder {
+   font-size:20px;
+   padding-left:30px;
   }
 
   /* Firefox 19+ */
-  #search-bar::-moz-placeholder { 
-    font-size:20px; 
+  #search-bar::-moz-placeholder {
+    font-size:20px;
   }
 
 }

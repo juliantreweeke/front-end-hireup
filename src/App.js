@@ -4,24 +4,25 @@ import './App.css';
 import Dropdown from './components/Dropdown';
 
 
+
 const url = 'http://localhost:1111/characters';
 
 
 
 
 class App extends Component {
-  
+
   constructor(props) {
     super(props);
-    this.state = {search:' ', success:'false',results:undefined,loading:false 
+    this.state = {search:' ', success:'false',results:undefined,loading:false
     };
-    
+
     this.auto_suggest = this.auto_suggest.bind(this);
-  
+
   }
-  
-  
-  
+
+
+
   search(){
     this.setState({loading: true});
     let search = this.state.search;
@@ -36,68 +37,68 @@ class App extends Component {
       // console.log(data.results);
       this.setState({results: results});
       console.log('results', this.state.results);
-      
-      
-      
+
+
+
         // this.setState({ results: data.results});
-        
-      
-        // 
-    // data.results.length > 0 ? data.results.map((results,i) => { 
-    // 
-    //   }) : console.log("whoops can't find the name!");    
-    
+
+
+        //
+    // data.results.length > 0 ? data.results.map((results,i) => {
+    //
+    //   }) : console.log("whoops can't find the name!");
+
     })
-      
-      
-    
+
+
+
   }
-  
+
  auto_suggest(e){
    this.setState({search: e.target.value});
    this.search();
-  
+
  }
-  
-  
-  
 
 
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
   render() {
-    
+
     let results = this.state.results;
-    
+
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          
-          <div class="mobile-menu">
+
+          <div className="mobile-menu">
             <span></span>
             <span></span>
             <span></span>
           </div>
-  
+
           <input className={ this.state.loading ? 'loading' : ''} onChange={(e)=>{ this.auto_suggest(e) } } id="search-bar" type="text" placeholder="Search.."></input>
-        
+
         </header>
-          
-          
-          { results !== undefined ? 
+
+
+          { results !== undefined ?
             results.length === 0 ? <Dropdown search={this.state.search} results={"none"}/> : <Dropdown results={this.state.results}/>
-          : null  }  
-        
-          
-          
-          
+          : null  }
+
+
+
+
       </div>
     );
   }
