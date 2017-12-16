@@ -29,8 +29,12 @@
   margin-right:17%; 
   width:240px;
   height:35px;
-  border-radius:3px; 
+  border-radius:5px; 
   border:none;
+}
+
+#search-bar:focus {
+  border:blue 0.5px solid;
 }
 
 /* Chrome/Opera/Safari */
@@ -50,16 +54,88 @@
     background-color: white;
 }
 
+/* mobile burger menu styles */
+
+.mobile-menu {
+  display:none; 
+  position: relative;
+  top:-5px;
+  right:5px;
+}
+
+.mobile-menu span {
+    border-radius:3px; 
+    content: "";
+    position: absolute;
+    left: 30px;
+    width: 32px;
+    border: 3px solid #fff;
+}
+
+.mobile-menu span:nth-child(1) {
+  top: 18px;
+}
+
+.mobile-menu span:nth-child(2) {
+  top: 27px;
+}
+
+.mobile-menu span:nth-child(3) {
+  top: 36px;
+}
 
 
 
 
-.spinner {
-  float:right;
-  margin-top:7px; 
+
+
+
+
+
+
+
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (max-width : 768px) {
   
-  /* margin-right:17%;  */
-  width:30px;
-  height:30px;
+  /* on mobile view - show burger menu option */
+  .mobile-menu {
+    display:block; 
+  }
+
+  .App-logo {
+   position: absolute;
+   top: 6%;
+   width: 200px;
+   height: 78px;
+   margin-top: -35px; 
+   margin-left: -100px; 
+  }
   
+  #search-bar {
+    font-size:20px; 
+    position: absolute;
+    border: 1px solid rgba(142, 149, 168, 0.3);
+    margin-top: 100px; 
+    margin-left: -180px; 
+    width:360px;
+    height:60px;
+    background-color:#F9F9F9;
+  }
+  
+
+  
+  
+  
+  
+  #search-bar::-webkit-input-placeholder { 
+   font-size:20px; 
+   padding-left:30px; 
+  }
+
+  /* Firefox 19+ */
+  #search-bar::-moz-placeholder { 
+    font-size:20px; 
+  }
+
 }

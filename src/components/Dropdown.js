@@ -33,7 +33,7 @@ class Dropdown extends Component {
     ? <div className="noresults">
         <h1>Oh no!</h1>
          <div>
-          <h3>No results found for {this.props.search} </h3>
+          <h3>No results found for "{this.props.search}" </h3>
          </div>
       </div>
     : 
@@ -46,7 +46,7 @@ class Dropdown extends Component {
           return <div className="Dropdown" key={i} onClick={() => {
             this.select(character.name)
           }}>
-            <img className="character-image" src={`${character.thumbnail.path}.jpg`}></img>
+            <img className="character-image" src={`${character.thumbnail.path}.${character.thumbnail.extension}`}></img>
             <div className="character-text">
               <div>{character.name}</div>
               <div className="character-description">{description}</div>
@@ -66,4 +66,3 @@ export default Dropdown;
 
 
 
-// 

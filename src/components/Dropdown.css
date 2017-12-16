@@ -7,8 +7,15 @@ body::-webkit-scrollbar {
 .Dropdown-wrapper {
   /* height:475px; */
 
-  max-height: 475px;
+  max-height: 604px;
   -webkit-overflow-scrolling: touch;
+  width:440px;
+  margin-right:18%; 
+  margin-top:-20px; 
+  border-radius:5px;
+  border: 1px solid rgba(142, 149, 168, 0.4);
+  float:right;
+  overflow: scroll;
   
   
   /* overflow-x: visible;
@@ -23,19 +30,15 @@ body::-webkit-scrollbar {
 }
 
 .Dropdown {
-  overflow: scroll;
+  /* overflow: scroll; */
   height:100px; 
+  width:440px;
 }
 
 .Dropdown, .noresults {
   background-color:#F9F9F9;
-  float:right;
-  width:440px;
-  margin-right:18%; 
   z-index: 2;
-  margin-top:-20px;   
-  border-radius:3px;
-  border: 1px solid rgba(142, 149, 168, 0.4);
+  border-top: 1px solid rgba(142, 149, 168, 0.4);
   color:#505A76;
 }
 
@@ -47,7 +50,6 @@ body::-webkit-scrollbar {
 .character-description {
   font-size:10px;
   color:rgba(80, 90, 118, 0.7);
-
 }
 
 .character-image {
@@ -68,16 +70,60 @@ body::-webkit-scrollbar {
   height:180px;
 }
 
+.noresults h3 {
+ color:#505A76;
+}
+
 .noresults h1 {
   padding-top:3%; 
   color:red;
 }
 
-.noresults h3 {
-
-}
-
 .noresults > div:nth-of-type(1) { 
   padding:0 30%;
 }
+
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (max-width : 768px) {
+  
+  /* on mobile view, hide the character description */
+  .character-description {
+    display: none;
+  }
+  
+  .Dropdown-wrapper {
+    position: absolute; 
+    margin-top:120px; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 364px;
+    max-height:505px; 
+  }
+  
+  .Dropdown, .noresults {
+
+    margin-right:0%; 
+    width: 364px;
+    font-size:30px;  
+    height:125px;   
+  }
+  
+  .character-image {
+    width:75px;
+    height:75px; 
+    margin-top:5px; 
+    margin-left:10px; 
+  }
+  
+  .character-text {
+    margin-top:15px;
+    margin-left:50px; 
+    
+  }
+
+}
+
 
