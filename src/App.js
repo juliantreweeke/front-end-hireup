@@ -37,27 +37,14 @@ class App extends Component {
       // console.log(data.results);
       this.setState({results: results});
       console.log('results', this.state.results);
-
-
-
-        // this.setState({ results: data.results});
-
-
-        //
-    // data.results.length > 0 ? data.results.map((results,i) => {
-    //
-    //   }) : console.log("whoops can't find the name!");
-
     })
-
-
 
   }
 
  auto_suggest(e){
    this.setState({search: e.target.value});
-   this.search();
-
+   // if search query is empty - don't do a server request - otherwise call the search function
+   this.state.search !== '' ? this.search():null;
  }
 
 
@@ -92,12 +79,12 @@ class App extends Component {
         </header>
 
 
-          { results !== undefined ?
+          { results !== undefined && this.state.search !== '' ?
             results.length === 0 ? <Dropdown search={this.state.search} results={"none"}/> : <Dropdown results={this.state.results}/>
           : null  }
 
 
-
+          <button className="test" onClick={ () => {console.log(this.state.results)}   } >test</button>
 
       </div>
     );

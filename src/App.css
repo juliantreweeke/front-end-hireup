@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:500');
+
 .App {
   text-align: center;
+}
+
+.test {
+  position:absolute;
+  top:50%; 
 }
 
 .App-logo {
@@ -27,27 +34,33 @@
   float:right;
   margin-top:7px;
   margin-right:17%;
-  width:240px;
+  width:220px;
   height:35px;
   border-radius:5px;
-  border:none;
+  border:2px solid white;
+  padding-left:20px;
+  /* change color of cursor */
+  caret-color: #649DE6;
+  box-sizing: border-box;
 }
 
 #search-bar:focus {
-  border:blue 0.5px solid;
+  border:#1C79B8 2px solid;
+  box-shadow: solid 4px #1C79B8;
 }
 
 /* Chrome/Opera/Safari */
 #search-bar::-webkit-input-placeholder {
   color: rgba(142, 149, 168, 0.9);
-  padding-left:20px;
+
 }
 
 /* Firefox 19+ */
 #search-bar::-moz-placeholder {
   color: rgba(142, 149, 168, 0.9);
-  padding-left:20px;
 }
+
+
 
 .loading {
     background: url('./img/spinner-small.svg') no-repeat right center;
@@ -116,13 +129,22 @@
   #search-bar {
     font-size:20px;
     position: absolute;
-    border: 1px solid rgba(142, 149, 168, 0.3);
+    border: 2px solid rgba(142, 149, 168, 0.3);
     margin-top: 100px;
     margin-left: -180px;
     width:360px;
     height:60px;
     background-color:#F9F9F9;
   }
+
+  #search-bar:focus {
+    border:#1C79B8 2px solid;
+    box-shadow: solid 8px #1C79B8;
+  }
+
+
+
+
 
   .loading  {
     background: url('./img/spinner.svg') no-repeat right center;
@@ -135,7 +157,6 @@
 
   #search-bar::-webkit-input-placeholder {
    font-size:20px;
-   padding-left:30px;
   }
 
   /* Firefox 19+ */
