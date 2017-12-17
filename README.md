@@ -1,42 +1,43 @@
 
 
-## Marvel Character Search
+# Frontend Assessment - Marvel Character Search
 
-A web app using the Marvel api to search for Marvel super heros.
+A web app using the Marvel API to search for Marvel super hero's.
 
 ## Technologies
 
-This application was developed using Create React App
+This application was developed using React with Create React App.
+
+Start the app via - Yarn start
+Running on http://localhost:3000/          
 
 ## Testing
 
 Testing is done with Jest and Enzyme.
-Tests can be run via - Yarn Test
+Tests can be run via - Yarn Test.
+Dependencies: yarn add react-addons-test-utils enzyme --dev.
 
-I haven't done much testing and this was my first time using Jest and Enzyme, so this is the part that I didn't get to complete in this project. The tests I did write are very very basic and some currently don't pass.
-I found it difficult to mock a fetch call to do any proper testing with and I got stumped with it and had to move on.
-If I had more time I would have wrote a test for every function and user interaction.
-In future I am going to start writing projects with testing first!
+This was my first time using Jest and Enzyme and as such I ran out of time and only completed basic testing.
+I struggled to mock a fetch request and had to move on. Given more time I would like to test all functions and user interactions.
 
 ## Styling
 
-I decided to not use a css framework for this project and do it from scratch.
-I found this more fun and I always learn alot doing projects this way.
-I also thought it was overkill to use a css framework for a app this size.
+I decided not to use a CSS framework for this project and do it from scratch. I felt it was overkill to use a css framework for a app this size.
+In any case I found this more enjoyable and find I always learn a lot writing CSS without a framework.
 
-I tried to make the styling as pixel perfect as I could to the brief.
-I wasn't sure on the dimensions from the brief images so I just tried to make it look as close as possible.
+
 If I had more time I would have converted the css to sass and refactored styles.
 
-## Things I would have like to polish/bugs
+
+## Things I would have liked to polish/bugs
 
 -The loader isn't the same design as in the brief.
 With more time I would search deeper to find the exact svg.
 
--There is a 1px border top on the drop down that when I got rid of messed with previous css styling.
+-There is a 1px border top on the drop down that when I get rid of, messes up previous CSS styling.
 
 -If you put only one letter in the search bar the query isn't sent to the proxy server?
 I am not sure if that is a condition of the api's nameStartsWith= query.
 
 -The scroll bar is not styled! I had trouble trying to customize the scrollbar to match the briefs image.
-Maybe using a css framework or plugin could have solved this problem.
+Maybe using a CSS framework or plugin could have solved this problem.

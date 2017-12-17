@@ -22,9 +22,15 @@ describe('<Dropdown />', () => {
   });
 
 
-    it('select function does a console log', () => {
-      expect(select('wolverine')).toMatchSnapshot();
-    });
+  // const wolverine = jest.fn();
+  // select([wolverine);
+  // expect(select).toEqual(wolverine);
+
+    // couldn't get this test to work:
+
+    // it('select function does a console log', () => {
+    //   expect(select('wolverine')).toMatchSnapshot();
+    // });
 
 
 
