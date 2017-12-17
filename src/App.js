@@ -1,29 +1,29 @@
-import React, { Component } from 'react';
-import logo from './logo.png';
-import './App.css';
+import React, {Component} from 'react';
+import logo from './img/logo.png';
+import './styles/App.css';
 import Dropdown from './components/Dropdown';
-
 
 class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {search:' ', success:'false',results:undefined,loading:false
+    this.state = {
+      search: ' ',
+      success: 'false',
+      results: undefined,
+      loading: false
     };
 
     this.auto_suggest = this.auto_suggest.bind(this);
 
   }
 
-
-
-  search(){
+  search() {
     // when search function called set loading to true
     this.setState({loading: true});
     let search = this.state.search;
     const url_search = `http://localhost:1111/characters?nameStartsWith=${search}`;
-    fetch(url_search)
-    .then(results => {
+    fetch(url_search).then(results => {
       return results.json();
     }).then(data => {
       this.setState({loading: false});
@@ -33,24 +33,13 @@ class App extends Component {
 
   }
 
- auto_suggest(e){
-   this.setState({search: e.target.value});
-   // if search query is empty - don't do a server request - otherwise call the search function
-   if (this.state.search !== ''){
-     this.search();
-   }
- }
-
-
-
-
-
-
-
-
-
-
-
+  auto_suggest(e) {
+    this.setState({search: e.target.value});
+    // if search query is empty - don't do a server request - otherwise call the search function
+    if (this.state.search !== '') {
+      this.search();
+    }
+  }
 
 
   render() {

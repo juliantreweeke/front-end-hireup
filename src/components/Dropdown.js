@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Dropdown.css';
+import '../styles/Dropdown.css';
 
 class Dropdown extends Component {
 
@@ -29,7 +29,7 @@ class Dropdown extends Component {
   }
 
   renderCharacters(results){
-
+  // do not map results if it is undefined! When I did testing I found this error and added this fix
     if(results === undefined){
       return;
     }
@@ -42,7 +42,7 @@ class Dropdown extends Component {
           description = `${character.description.substring(0, 120)}..`
         }
 
-        /* onclick to the select function */
+        /* onclick do the select function */
         return <div className="Dropdown" key={i} onClick={() => {
           this.select(character.name)
         }}>
@@ -70,25 +70,23 @@ class Dropdown extends Component {
     </div>
   }
 
+  no_results(){
+  return <div className="noresults">
+      <h1>Oh No!</h1>
+      <div>
+        <h3>No results found for "{this.props.search}"</h3>
+      </div>
+  </div>
+  }
+
   render() {
     // get the props passed down from the parent component
     let results = this.props.results;
 
-    let no_results = (
-      <div className="noresults">
-        <h1>Oh No!</h1>
-        <div>
-          <h3>No results found for "{this.props.search}"
-          </h3>
-        </div>
-      </div>
-    )
-
-
     return (
       <div>
         <div className="Dropdown-wrapper">
-          { results === "none" ? {no_results} : this.renderCharacters(results) }
+          { results === "none" ? this.no_results() : this.renderCharacters(results) }
         </div>
       </div>
     );
