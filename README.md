@@ -15,10 +15,9 @@ Running on http://localhost:3000/
 
 Testing is done with Jest and Enzyme.
 Tests can be run via - Yarn Test.
-Dependencies: yarn add react-addons-test-utils enzyme --dev.
+Dependencies:yarn add react-addons-test-utils enzyme enzyme-adapter-react-16 react-test-renderer  --dev.
 
-This was my first time using Jest and Enzyme and as such I ran out of time and only completed basic testing.
-I struggled to mock a fetch request and had to move on. Given more time I would like to test all functions and user interactions.
+This was my first time using Jest and Enzyme and as such I ran out of time and only completed basic testing.I struggled to mock a fetch request and had to move on. Given more time I would like to test all functions and user interactions.
 
 ## Styling
 

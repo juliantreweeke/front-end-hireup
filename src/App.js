@@ -26,7 +26,9 @@ class App extends Component {
     fetch(url_search).then(results => {
       return results.json();
     }).then(data => {
+      // when fetch is finished set loading to false
       this.setState({loading: false});
+      // update state with results from fetch request
       let results = data.results;
       this.setState({results: results});
     })

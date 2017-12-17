@@ -4,7 +4,7 @@ import Dropdown from '../components/Dropdown';
 import { select } from '../components/Dropdown';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-
+import renderer from 'react-test-renderer';
 Enzyme.configure({ adapter: new Adapter() });
 import { mount } from 'enzyme';
 import { shallow } from 'enzyme';
@@ -21,18 +21,10 @@ describe('<Dropdown />', () => {
     expect(component).toHaveLength(1);
   });
 
-
-  // const wolverine = jest.fn();
-  // select([wolverine);
-  // expect(select).toEqual(wolverine);
-
-    // couldn't get this test to work:
-
-    // it('select function does a console log', () => {
-    //   expect(select('wolverine')).toMatchSnapshot();
-    // });
-
-
+  it('renders an `.Dropdown-wrapper`', () => {
+    const wrapper = shallow(<Dropdown/>);
+    expect(wrapper.find('.Dropdown-wrapper')).toHaveLength(1);
+  });
 
 
 
