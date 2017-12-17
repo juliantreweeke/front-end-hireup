@@ -4,18 +4,30 @@
 
 A web app using the Marvel API to search for Marvel super hero's.
 
-## Technologies
+### Technologies
 
 This application was developed using React with Create React App.
 
-Start the app via - `Yarn start`
+### Installation
+
+To install the application, cd to the root directory and invoke:
+
+`yarn install`
+
+### Usage Instructions
+
+To run the application invoke:
+
+`$ yarn start`
+
 Running on http://localhost:3000/          
 
-## Testing
+### Testing
 
 Testing is done with Jest and Enzyme.
 
-How to run tests
+To run tests invoke:
+
 `yarn test`
 
 Specific tests:
@@ -28,9 +40,11 @@ Dependencies:
 
 `yarn add react-addons-test-utils enzyme enzyme-adapter-react-16 react-test-renderer  --dev`
 
+#### Test Notes
+
 This was my first time using Jest and Enzyme and as such I ran out of time and only completed basic testing.I struggled to mock a fetch request and had to move on. Given more time I would like to test all functions and user interactions.
 
-## Styling
+#### Styling Notes
 
 I decided not to use a CSS framework for this project and do it from scratch. I felt it was overkill to use a css framework for a app this size.
 In any case I found this more enjoyable and find I always learn a lot writing CSS without a framework.
@@ -39,7 +53,7 @@ In any case I found this more enjoyable and find I always learn a lot writing CS
 If I had more time I would have converted the css to sass and refactored styles.
 
 
-## Things I would have liked to polish
+#### Things I would have liked to polish
 
 -The loader isn't the same design as in the brief.
 With more time I would search deeper to find the exact svg.
