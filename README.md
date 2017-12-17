@@ -10,6 +10,12 @@ This application was developed using React with Create React App.
 
 ### Installation
 
+Yarn is required to use this app.
+You can install yarn through the [Homebrew](https://brew.sh/) package manager.
+This will also install Node.js if it is not already installed.
+
+`brew install yarn`
+
 To install the application, cd to the root directory and invoke:
 
 `yarn install`
