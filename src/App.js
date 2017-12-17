@@ -4,12 +4,6 @@ import './App.css';
 import Dropdown from './components/Dropdown';
 
 
-
-const url = 'http://localhost:1111/characters';
-
-
-
-
 class App extends Component {
 
   constructor(props) {
@@ -24,6 +18,7 @@ class App extends Component {
 
 
   search(){
+    // when search function called set loading to true
     this.setState({loading: true});
     let search = this.state.search;
     const url_search = `http://localhost:1111/characters?nameStartsWith=${search}`;
@@ -33,10 +28,7 @@ class App extends Component {
     }).then(data => {
       this.setState({loading: false});
       let results = data.results;
-      console.log(results);
-      // console.log(data.results);
       this.setState({results: results});
-      console.log('results', this.state.results);
     })
 
   }
@@ -44,7 +36,9 @@ class App extends Component {
  auto_suggest(e){
    this.setState({search: e.target.value});
    // if search query is empty - don't do a server request - otherwise call the search function
-   this.state.search !== '' ? this.search():null;
+   if (this.state.search !== ''){
+     this.search();
+   }
  }
 
 
@@ -74,17 +68,16 @@ class App extends Component {
             <span></span>
           </div>
 
+         {/* if loading is true show svg loading img - when value of input field is changed call auto_suggest function */}
           <input className={ this.state.loading ? 'loading' : ''} onChange={(e)=>{ this.auto_suggest(e) } } id="search-bar" type="text" placeholder="Search.."></input>
 
         </header>
 
-
+          {/* if  results is defined and a query is present in search box show Dropdown component */}
+          {/* if  results is flagged as none then don't send result state as prop */}
           { results !== undefined && this.state.search !== '' ?
             results.length === 0 ? <Dropdown search={this.state.search} results={"none"}/> : <Dropdown results={this.state.results}/>
           : null  }
-
-
-          <button className="test" onClick={ () => {console.log(this.state.results)}   } >test</button>
 
       </div>
     );

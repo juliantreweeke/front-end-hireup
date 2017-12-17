@@ -6,7 +6,7 @@
 
 .test {
   position:absolute;
-  top:50%; 
+  top:50%;
 }
 
 .App-logo {
@@ -42,6 +42,7 @@
   /* change color of cursor */
   caret-color: #649DE6;
   box-sizing: border-box;
+  color:#525C78;
 }
 
 #search-bar:focus {
@@ -101,14 +102,6 @@
 
 
 
-
-
-
-
-
-
-
-
 /* Smartphones (landscape) ----------- */
 @media only screen and (max-width : 768px) {
 
@@ -119,10 +112,9 @@
 
   .App-logo {
    position: absolute;
-   top: 5%;
+   top:7px;
    width: 200px;
    height: 78px;
-   margin-top: -33px;
    margin-left: -100px;
   }
 
@@ -143,16 +135,9 @@
   }
 
 
-
-
-
   .loading  {
     background: url('./img/spinner.svg') no-repeat right center;
   }
-
-
-
-
 
 
   #search-bar::-webkit-input-placeholder {
